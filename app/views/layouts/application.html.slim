@@ -9,4 +9,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     = link_to 'TecBok', root_path
-    = yield
+    .container
+	  -if flash.notice.present?
+	    .alert.alert-success= flash.notice
+      = yield
