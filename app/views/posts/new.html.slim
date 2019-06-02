@@ -11,4 +11,7 @@ p Find me in app/views/posts/new.html.slim
   .form_group
     = f.label :rate
     = f.select :rate, options_for_select((0..10).to_a)
+  .form_group
+    = f.label :image
+    = f.file_field :image, class: 'form_control'
   = f.submit nil, class: "btn btn-primary"

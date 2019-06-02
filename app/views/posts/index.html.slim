@@ -2,6 +2,7 @@ h1 Posts#index
 p Find me in app/views/posts/index.html.slim
 
 - @posts.each do |post|
+  = image_tag post.image if post.image.attached?
   = link_to post.title, post
   .star-ratings-sprite
     span.star-ratings-sprite-rating style="width:#{post.rate}0%"
