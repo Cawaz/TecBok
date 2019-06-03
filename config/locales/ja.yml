@@ -24,6 +24,13 @@ ja:
         password_confirmation: パスワード確認
         created_at: 登録日時
         updated_at: 更新日時
+  views:
+    pagination:
+      first: 最初
+      last: 最後
+      previous: 前
+      next: 次
+      trancate: ...
   date:
     abbr_day_names:
     - 日
