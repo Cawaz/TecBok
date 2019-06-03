@@ -72,3 +72,6 @@ gem 'bootstrap'
 gem 'devise'
 
 gem 'kaminari'
+
+gem 'font-awesome-sass'
+gem 'jquery-rails'
