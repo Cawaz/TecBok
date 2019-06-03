@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'posts#index'
 
   resources :posts do
@@ -7,5 +6,7 @@ Rails.application.routes.draw do
     resources :likes, only: %i[create destroy]
   end
 
-  # devise_for :users
+  devise_for :users, :controllers => {
+      :registrations => 'users/registrations'
+  }
 end
