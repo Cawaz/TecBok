@@ -1,17 +1,4 @@
 h1 Posts#new
 p Find me in app/views/posts/new.html.slim
 
-= form_with model: @post, local: true do |f|
-  .form_group
-    = f.label :title
-    = f.text_field :title, class: 'form_control'
-  .form_group
-    = f.label :review
-    = f.text_area :review, rows: 5, class: 'form_control'
-  .form_group
-    = f.label :rate
-    = f.select :rate, options_for_select((0..10).to_a)
-  .form_group
-    = f.label :image
-    = f.file_field :image, class: 'form_control'
-  = f.submit nil, class: "btn btn-primary"
+= render partial: 'form', locals: { post: @post}
