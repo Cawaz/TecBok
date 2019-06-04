@@ -12,7 +12,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     post = Post.new(
         title: post_params[:title],
         review: post_params[:review], rate: post_params[:rate], image: post_params[:image], user_id: current_user.id)
