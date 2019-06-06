@@ -1,6 +1,14 @@
 h1 Posts#index
 p Find me in app/views/posts/index.html.slim
 
+= search_form_for @q, class: 'mb-5' do |f|
+  .form-group.row
+    = f.label :title_cont, '名称', class: 'col-sm-2 col-form-label'
+    .col-sm-10
+      = f.search_field :title_cont, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-outline-primary'
+
 - @posts.each do |post|
   = image_tag post.image if post.image.attached?
   = link_to post.title, post
