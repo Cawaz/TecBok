@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @q = current_user.posts.ransack(params[:q])
+    @q = Post.all.ransack(params[:q])ß
     @posts = @q.result(distinct: true).recent.page(params[:page]).per(8)
   end
 
