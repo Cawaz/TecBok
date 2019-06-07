@@ -1,0 +1,9 @@
+h1 マイページ
+
+- @posts.each do |post|
+  = image_tag post.image if post.image.attached?
+  = link_to post.title, post
+  .star-ratings-sprite
+    span.star-ratings-sprite-rating style="width:#{post.rate}0%"
+
+= paginate @posts
