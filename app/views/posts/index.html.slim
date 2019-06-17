@@ -7,10 +7,12 @@ h1 Posts#index
       = f.search_field :title_cont, class: 'form-control'
   .form-group
     = f.submit class: 'btn btn-outline-primary'
-  
+
 - @posts.each do |post|
   = image_tag post.image if post.image.attached?
   = link_to post.title, post
+  p
+    = link_to post.user.username
   .star-ratings-sprite
     span.star-ratings-sprite-rating style="width:#{post.rate}0%"
 
