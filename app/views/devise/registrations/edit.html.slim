@@ -1,27 +1,33 @@
 h2
-  | Edit 
+  | Edit
   = resource_name.to_s.humanize
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
   .field
+    = f.label :username
+    br
+    = f.text_field :username, autofocus: true
+    .field
     = f.label :email
     br
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.email_field :email, autocomplete: "email"
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       | Currently waiting confirmation for: 
       = resource.unconfirmed_email
   .field
     = f.label :password
-    i
-      | (leave blank if you don't want to change it)
+
     br
     = f.password_field :password, autocomplete: "new-password"
     - if @minimum_password_length
       br
-      em
-        = @minimum_password_length
-        |  characters minimum
+      i
+        | 空欄のままなら変更しません
+      / br
+      / em
+      /   = @minimum_password_length
+      /   |  文字以上
   .field
     = f.label :password_confirmation
     br
@@ -29,14 +35,13 @@ h2
   .field
     = f.label :current_password
     i
-      | (we need your current password to confirm your changes)
+      | (変更を反映するには現在のパスワードを入力してください)
     br
     = f.password_field :current_password, autocomplete: "current-password"
   .actions
-    = f.submit "Update"
+    = f.submit "更新", class: 'btn btn-primary'
 h3
-  | Cancel my account
+  | アカウント削除
 p
-  | Unhappy? 
-  = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+  | 一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
+  = button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class: 'btn btn-danger'
