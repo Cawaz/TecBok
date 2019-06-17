@@ -1,0 +1,8 @@
+- if true # like&.persisted?
+  / = link_to post.likes.count, post_like_path(post, like), method: :delete, remote: true
+  = link_to post_like_path(post, like), method: :delete, remote: true, class: 'post__item-like-btn liked' do
+    = icon('fas', 'check')
+- else
+  = link_to post.likes.count, post_likes_path(post), method: :post, remote: true
+  = link_to post_likes_path(post), method: :post, remote: true do
+    = icon('fas', 'thumbs-up')
