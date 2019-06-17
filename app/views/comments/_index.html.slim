@@ -1,9 +1,9 @@
 - comments.each do |comment|
   - if comment.id.present?
-    p
-      = link_to comment.user.username, user_path(comment.user.id)
-    p
-      = comment.body
-    p
-      - if comment.user == current_user
-        = link_to '削除', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true
+    .card
+      .card-body
+        = link_to comment.user.username, user_path(comment.user.id), class: 'card-title'
+        .card-text
+          = comment.body
+        - if comment.user == current_user
+          = link_to '削除', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true
