@@ -78,3 +78,4 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 
 gem 'ransack'
+gem 'mini_magick'

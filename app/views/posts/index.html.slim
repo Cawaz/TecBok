@@ -9,7 +9,7 @@ h1 Posts#index
     = f.submit class: 'btn btn-outline-primary'
 
 - @posts.each do |post|
-  = image_tag post.image if post.image.attached?
+  = image_tag post.image.variant(resize: "200x320") if post.image.attached?
   = link_to post.title, post
   p
     = link_to post.user.username

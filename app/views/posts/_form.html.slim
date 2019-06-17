@@ -12,8 +12,3 @@
     = f.label :image
     = f.file_field :image, class: 'form_control'
   = f.submit nil, class: "btn btn-primary"
-
-
-  = puts "------------ログ開始------------"
-  - Rails::logger::debug(post.inspect)
-  = puts "------------ログ終了------------"
