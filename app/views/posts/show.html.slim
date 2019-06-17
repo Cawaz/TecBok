@@ -4,7 +4,7 @@ h1 = @post.title
 
 .star-ratings-sprite
   span.star-ratings-sprite-rating style="width:#{@post.rate}0%"
-
+= @user.username
 = simple_format @post.review
 
 = link_to '編集', edit_post_path, class: 'btn btn-primary'
