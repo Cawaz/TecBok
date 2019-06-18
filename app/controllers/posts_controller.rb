@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments
+    @categories = Category.all
   end
 
   def new
@@ -15,9 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(
-        title: post_params[:title],
-        review: post_params[:review], rate: post_params[:rate], image: post_params[:image], user_id: current_user.id)
+    post = current_user.posts.build(post_params)
     if post.save!
       redirect_to root_path, notice: "登録しました。"
     end
@@ -42,6 +41,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :review, :rate, :image)
+    params.require(:post).permit(:title, :review, :rate, :image, category_ids: [])
   end
 end

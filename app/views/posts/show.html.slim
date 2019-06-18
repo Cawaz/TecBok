@@ -2,6 +2,10 @@
 
 h1 = @post.title
 
+- @post.categories.each do |category|
+  span.badge.badge-pill.badge-dark
+    = category.name
+
 .star-ratings-sprite
   span.star-ratings-sprite-rating style="width:#{@post.rate}0%"
 = @post.user.username

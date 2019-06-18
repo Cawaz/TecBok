@@ -16,6 +16,8 @@ class Post < ApplicationRecord
   has_one_attached :image
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :post_category_relations, dependent: :destroy
+  has_many :categories, through: :post_category_relations
   belongs_to :user
 
   scope :recent, -> { order(created_at: :desc) }

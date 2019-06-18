@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: category_posts
+# Table name: post_category_relations
 #
 #  id          :bigint           not null, primary key
 #  created_at  :datetime         not null
@@ -9,5 +9,7 @@
 #  post_id     :integer
 #
 
-class CategoryPost < ApplicationRecord
+class PostCategoryRelation < ApplicationRecord
+  belongs_to :category
+  belongs_to :post
 end
