@@ -1,5 +1,3 @@
-h1 Posts#index
-
 = search_form_for @q, class: 'mb-5' do |f|
   .form-group.row
     = f.label :title_cont, '名称', class: 'col-sm-2 col-form-label'
@@ -7,16 +5,15 @@ h1 Posts#index
       = f.search_field :title_cont, class: 'form-control'
   .form-group
     = f.submit class: 'btn btn-outline-primary'
-.container
-  - @posts.each do |post|
-    .col-md-3
-      p
-        = image_tag post.image.variant(resize: "200x320") if post.image.attached?
-      p
-        = link_to post.title, post
-      p
-        = link_to post.user.username
-      p.star-ratings-sprite
-        span.star-ratings-sprite-rating style="width:#{post.rate}0%"
+- @posts.each do |post|
+  .col-md-3
+    p
+      = image_tag post.image.variant(resize: "200x320") if post.image.attached?
+    p
+      = link_to post.title, post
+    p
+      = link_to post.user.username
+    p.star-ratings-sprite
+      span.star-ratings-sprite-rating style="width:#{post.rate}0%"
 
 = paginate @posts
