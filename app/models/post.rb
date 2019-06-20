@@ -20,6 +20,9 @@ class Post < ApplicationRecord
   has_many :categories, through: :post_category_relations
   belongs_to :user
 
+  validates :title, presence: true
+  validates :review, presence: true
+
   scope :recent, -> { order(created_at: :desc) }
 
 end
