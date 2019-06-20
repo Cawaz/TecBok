@@ -17,8 +17,7 @@
     = f.label :image
     = f.file_field :image
   .form-group
-    p
-      | カテゴリ
+    = f.label :category
     = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
       .form-check-inline
         = category.label class: 'form-check-label' do
