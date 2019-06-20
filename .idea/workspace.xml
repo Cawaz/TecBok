@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a37a7bab-2c8d-428d-afad-2faf4a25e13a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/posts/index.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/index.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/posts/_form.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/_form.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/posts/new.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts/new.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/locales/ja.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/ja.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -52,13 +55,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="167">
+              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/posts/new.html.slim">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -73,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+            <state relative-caret-position="74">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -97,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.slim">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state relative-caret-position="179">
+              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -146,6 +154,7 @@
       <find>index</find>
       <find>star-ratings-sprite</find>
       <find>image_tag</find>
+      <find>登録する</find>
     </findStrings>
   </component>
   <component name="GeneratorOptions">
@@ -165,7 +174,6 @@
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/views/devise/shared/_error_messages.html.slim" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.slim" />
-        <option value="$PROJECT_DIR$/app/views/posts/new.html.slim" />
         <option value="$PROJECT_DIR$/app/views/kaminari/_paginator.html.slim" />
         <option value="$PROJECT_DIR$/db/migrate/20190603042829_add_username_to_users.rb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.slim" />
@@ -189,7 +197,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20190617121009_create_categories.rb" />
         <option value="$PROJECT_DIR$/app/views/posts/edit.html.slim" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/views/posts/_form.html.slim" />
         <option value="$PROJECT_DIR$/db/migrate/20190618132549_rename_category_post_to_category_post_relations.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20190618132822_rename_category_post_to_post_category_relations.rb" />
         <option value="$PROJECT_DIR$/app/models/category_post.rb" />
@@ -199,12 +206,14 @@
         <option value="$PROJECT_DIR$/app/views/posts/show.html.slim" />
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/config/locales/ja.yml" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.slim" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.slim" />
         <option value="$PROJECT_DIR$/app/views/posts/index.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.slim" />
+        <option value="$PROJECT_DIR$/config/locales/ja.yml" />
+        <option value="$PROJECT_DIR$/app/views/posts/new.html.slim" />
+        <option value="$PROJECT_DIR$/app/views/posts/_form.html.slim" />
       </list>
     </option>
   </component>
@@ -422,12 +431,12 @@
       <workItem from="1560665466768" duration="4417000" />
       <workItem from="1560689293055" duration="12917000" />
       <workItem from="1560760536859" duration="598000" />
-      <workItem from="1560765927980" duration="22838000" />
+      <workItem from="1560765927980" duration="24272000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95646000" />
+    <option name="totallyTimeSpent" value="97080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="439" extended-state="0" />
@@ -717,13 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/posts/new.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/post.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
@@ -776,13 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.slim">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.slim">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -790,17 +785,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="25" column="49" lean-forward="true" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+        <state relative-caret-position="179">
+          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/posts/index.html.slim">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.slim">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        <state relative-caret-position="74">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/posts/new.html.slim">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.slim">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
         </state>
       </provider>
     </entry>

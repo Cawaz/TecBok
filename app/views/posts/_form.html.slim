@@ -1,21 +1,21 @@
 = form_with model: post, local: true do |f|
   .form_group
     = f.label :title
-    = f.text_field :title, class: 'form_control'
+    = f.text_field :title, class: 'form-control'
   .form_group
     = f.label :review
-    = f.text_area :review, rows: 5, class: 'form_control'
+    = f.text_area :review, rows: 10, class: 'form-control'
   .form_group
     = f.label :rate
     = f.select :rate, options_for_select((0..10).to_a, :selected => post.rate)
   .form_group
     = f.label :image
-    = f.file_field :image, class: 'form_control'
+    = f.file_field :image
   .form-group
     span
       | カテゴリ
     = f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
-      .form-check
+      .form-check-inline
         = category.label class: 'form-check-label' do
           = category.check_box class: 'form-check-input'
           = category.text
