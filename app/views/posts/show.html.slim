@@ -1,23 +1,27 @@
-= image_tag @post.image.variant(resize: "400x840") if @post.image.attached?
+.row
+  .col-md-5
+   = image_tag @post.image.variant(resize: "300x630") if @post.image.attached?
 
-h1 = @post.title
+  .col-md-7
+    h2 = @post.title
 
-- @post.categories.each do |category|
-  span.badge.badge-pill.badge-dark
-    = category.name
+    - @post.categories.each do |category|
+      span.badge.badge-pill.badge-dark
+        = category.name
 
-.star-ratings-sprite
-  span.star-ratings-sprite-rating style="width:#{@post.rate}0%"
-= @post.user.username
-= simple_format @post.review
+    .star-ratings-sprite
+      span.star-ratings-sprite-rating style="width:#{@post.rate}0%"
+    = @post.user.username
+    = simple_format @post.review
 
-= link_to '編集', edit_post_path, class: 'btn btn-primary'
-= link_to '削除', post_path, method: :delete, class: 'btn btn-danger', data: { confirm: '削除してよろしいですか？' }
+    - if current_user.id == @post.user.id
+      = link_to '編集', edit_post_path, class: 'btn btn-primary'
+      = link_to '削除', post_path, method: :delete, class: 'btn btn-danger', data: { confirm: '削除してよろしいですか？' }
 
-= render partial: 'like_action', locals: { post: @post, like: current_user.likes.find_by(post: @post) }
+    = render partial: 'like_action', locals: { post: @post, like: current_user.likes.find_by(post: @post) }
 
-h5 コメント
-#comments_area
-  = render partial: 'comments/index', locals: { comments: @comments }
-- if user_signed_in?
-  = render partial: 'comments/form', locals: { comment: @comment, post: @post }
+    h5 コメント
+    #comments_area
+      = render partial: 'comments/index', locals: { comments: @comments }
+    - if user_signed_in?
+      = render partial: 'comments/form', locals: { comment: @comment, post: @post }
