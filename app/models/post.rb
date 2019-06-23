@@ -13,7 +13,7 @@
 #
 
 class Post < ApplicationRecord
-  has_one_attached :image
+  has_one_attached :cover_image
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :post_category_relations, dependent: :destroy
@@ -25,4 +25,7 @@ class Post < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
 
+  def image
+    cover_image.attached? ? cover_image : '/images/fallback/no_image.png'
+  end
 end
