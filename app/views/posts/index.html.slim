@@ -7,10 +7,10 @@
   - @posts.each do |post|
     .col-md-3
       p
-        = link_to image_tag(post.image.variant(resize: "200x320")), post
+        = link_to image_tag(post.image,  class: 'trim'), post
       p
         = link_to post.title, post
-      p
+      a
         = link_to post.user.username
       p.star-ratings-sprite
         span.star-ratings-sprite-rating style="width:#{post.rate}0%"

@@ -12,12 +12,11 @@ html
       = link_to 'TecBok', root_path, class: "navbar-brand"
       .collapse.navbar-collapse.justify-content-end
         - if user_signed_in?
+          = link_to '新規投稿', new_post_path, class: 'btn btn-primary mr-4'
           ul.navbar-nav
-            li.nav-item
-              = link_to '新規投稿', new_post_path
             li.dropdown
               a.dropdown-toggle[data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
-                = image_tag current_user.image.variant(resize: "50x50")
+                = image_tag current_user.avatar.variant(resize: "40x40"), class: 'img-avatar'
               .dropdown-menu.dropdown-menu-right
                 = link_to 'マイページ', user_path(current_user), class: "dropdown-item"
                 = link_to 'プロフィール設定', edit_user_registration_path, class: "dropdown-item"

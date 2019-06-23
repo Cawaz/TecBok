@@ -13,4 +13,5 @@ h2
       = f.label :remember_me
   .actions
     = f.submit "ログイン", class: 'btn btn-primary'
-= render "devise/shared/links"
+.mt-4
+  = link_to "アカウント登録", new_user_registration_path, class: 'btn btn-success'

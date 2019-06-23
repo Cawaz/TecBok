@@ -1,7 +1,7 @@
 h1 マイページ
 
 - @posts.each do |post|
-  = image_tag post.image if post.image.attached?
+  = image_tag post.cover_image if post.cover_image.attached?
   = link_to post.title, post
   .star-ratings-sprite
     span.star-ratings-sprite-rating style="width:#{post.rate}0%"
