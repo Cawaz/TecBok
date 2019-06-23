@@ -1,48 +1,42 @@
 h2
-  | Edit
-  = resource_name.to_s.humanize
-  = image_tag current_user.image.variant(resize: "200x320") if current_user.image.attached?
+  | プロフィール設定
+= image_tag current_user.avatar.variant(resize: "200x320") if current_user.avatar.attached?
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
-  .field
+  .form_group
     = f.label :username
-    br
-    = f.text_field :username, autofocus: true
-  .field
+    = f.text_field :username, autofocus: true, class: 'form-control'
+  .form_group
     = f.label :email
-    br
-    = f.email_field :email, autocomplete: "email"
-  .field
+    = f.email_field :email, autocomplete: "email", class: 'form-control'
+  .form_group
     = f.label :image
-    br
-    = f.file_field :image, class: 'form_control'
+    = f.file_field :avatar
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       | Currently waiting confirmation for: 
       = resource.unconfirmed_email
-  .field
+  .form_group
     = f.label :password
-
-    br
-    = f.password_field :password, autocomplete: "new-password"
+    = f.password_field :password, autocomplete: "new-password", class: 'form-control'
+    small.text-muted
+      | 空欄のままなら変更しません
     - if @minimum_password_length
       br
       i
-        | 空欄のままなら変更しません
+        |
       / br
       / em
       /   = @minimum_password_length
       /   |  文字以上
-  .field
+  .form_group
     = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
+    = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
+  .form_group
     = f.label :current_password
-    i
-      | (変更を反映するには現在のパスワードを入力してください)
-    br
-    = f.password_field :current_password, autocomplete: "current-password"
+    = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
+    small.text-muted
+      | 変更を反映するには現在のパスワードを入力してください
   .actions
     = f.submit "更新", class: 'btn btn-primary'
 h3
