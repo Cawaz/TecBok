@@ -31,4 +31,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+
+  def image
+    avatar.attached? ? avatar : '/images/fallback/photo.png'
+  end
 end
