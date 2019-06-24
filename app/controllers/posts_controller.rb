@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
   def index
     @q = Post.all.ransack(params[:q])
     @posts = @q.result(distinct: true).recent.page(params[:page]).per(8)
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments
     @categories = Category.all
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to root_path, notice: "登録しました。"
     else
@@ -25,18 +26,15 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to post, notice: "更新しました。"
+    @post.update(post_params)
+    redirect_to @post, notice: "更新しました。"
   end
 
   def destroy
-    post = Post.find(params[:id])
-    if post.destroy
+    if @post.destroy
       redirect_to root_path, notice: "削除しました。"
     end
   end
@@ -44,5 +42,9 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :review, :rate, :cover_image, category_ids: [])
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
