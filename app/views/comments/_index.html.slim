@@ -8,4 +8,5 @@
         p.mb-0
           = comment.body
       - if comment.user == current_user
-        = link_to '削除', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: 'col-md-2'
+        small
+          = link_to icon('fas', 'trash', '削除'), post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: 'col-md-2'
