@@ -1,9 +1,11 @@
 - comments.each do |comment|
   - if comment.id.present?
-    .card
-      .card-body
-        = link_to comment.user.username, user_path(comment.user.id), class: 'card-title'
-        .card-text
+    .row.mt-2
+      = image_tag(comment.user.image, class: 'img-avatar col-md-2')
+      .col-md-8
+        p.mb-0
+          = link_to comment.user.username, user_path(comment.user.id)
+        p.mb-0
           = comment.body
-        - if comment.user == current_user
-          = link_to '削除', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true
+      - if comment.user == current_user
+        = link_to '削除', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: 'col-md-2'
