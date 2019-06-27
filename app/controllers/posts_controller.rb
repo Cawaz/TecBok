@@ -57,6 +57,8 @@ class PostsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path unless current_user.id == @post.user_id
+    if user_signed_in?
+      redirect_to root_path unless current_user.id == @post.user_id
+    end
   end
 end
