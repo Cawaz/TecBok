@@ -21,7 +21,8 @@
 
       = render partial: 'like_action', locals: { post: @post, like: current_user.likes.find_by(post: @post) }
 
-    h5.mt-4 コメント
+    hr.mt-4
+    h5 コメント
     - if user_signed_in?
       = render partial: 'comments/form', locals: { comment: @comment, post: @post }
     .mt-4#comments_area
