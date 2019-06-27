@@ -1,9 +1,2 @@
-h1 マイページ
-
-- @posts.each do |post|
-  = image_tag post.cover_image if post.cover_image.attached?
-  = link_to post.title, post
-  .star-ratings-sprite
-    span.star-ratings-sprite-rating style="width:#{post.rate}0%"
-
-= paginate @posts
+h2 マイページ
+=render partial: 'posts/index', locals: { posts: @posts, q: @q }

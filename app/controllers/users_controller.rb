@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @posts = current_user.posts.page(params[:page]).per(8)
+    @q = Post.where(user_id: current_user.id).ransack(params[:q])
+    @posts = @q.result(distinct: true).recent.page(params[:page]).per(8)
   end
 end
