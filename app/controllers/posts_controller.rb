@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :move_to_index, only: %i[edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
+
 
   def index
     @q = Post.all.ransack(params[:q])
@@ -52,5 +54,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to root_path unless current_user.id == @post.user_id
   end
 end
