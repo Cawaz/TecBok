@@ -6,16 +6,12 @@
 .row
   - @posts.each do |post|
     .col-md-3
-      p
-        = link_to image_tag(post.image,  class: 'trim'), post
-      p
-        = link_to post.title, post
-      p
-        = icon('fas', 'thumbs-up')
-        = post.likes.count
-      a
-        = link_to post.user.username
-      p.star-ratings-sprite
+      p= link_to image_tag(post.image,  class: 'trim'), post
+      p= link_to post.title, post
+      = link_to post.user.username
+      .star-ratings-sprite
         span.star-ratings-sprite-rating style="width:#{post.rate}0%"
+      span= icon('fas', 'thumbs-up')
+      span.ml-1= post.likes.count
 
-= paginate @posts
+.mt-4= paginate @posts
