@@ -5,7 +5,7 @@
     = f.submit class: 'btn btn-outline-primary'
 .row
   - posts.each do |post|
-    .col-md-3
+    .col-md-3.mb-5
       p= link_to image_tag(post.image,  class: 'trim'), post
       p= link_to post.title, post
       = link_to post.user.username
@@ -14,4 +14,4 @@
       span= icon('fas', 'thumbs-up')
       span.ml-1= post.likes.count
 
-.mt-4= paginate posts
+= paginate posts

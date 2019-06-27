@@ -3,20 +3,21 @@ h2
 = image_tag current_user.avatar.variant(resize: "200x320") if current_user.avatar.attached?
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
-  .form_group
+  .form-group
     = f.label :username
     = f.text_field :username, autofocus: true, class: 'form-control'
-  .form_group
+  .form-group
     = f.label :email
     = f.email_field :email, autocomplete: "email", class: 'form-control'
-  .form_group
+  .form-group
     = f.label :image
-    = f.file_field :avatar
+    .ml-4
+      = f.file_field :avatar
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       | Currently waiting confirmation for: 
       = resource.unconfirmed_email
-  .form_group
+  .form-group
     = f.label :password
     = f.password_field :password, autocomplete: "new-password", class: 'form-control'
     small.text-muted

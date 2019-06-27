@@ -1,6 +1,6 @@
 .row
   .col-md-4
-   = image_tag @post.image, class: 'd-block mx-auto trim'
+    = image_tag @post.image, class: 'd-block mx-auto trim'
 
   .col-md-7
     h2 = @post.title
@@ -12,7 +12,9 @@
     .star-ratings-sprite
       span.star-ratings-sprite-rating style="width:#{@post.rate}0%"
     = @post.user.username
-    = simple_format @post.review
+
+    .bg-light.p-3
+      = simple_format @post.review
 
     - if user_signed_in?
       - if current_user.id == @post.user.id
