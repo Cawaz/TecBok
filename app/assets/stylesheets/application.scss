@@ -11,6 +11,7 @@
   overflow: hidden;
   text-indent: -999em;
   width: 110px;
+  display: block;
 }
 
 .star-ratings-sprite-rating {
@@ -28,9 +29,16 @@
   object-fit: contain;
 }
 
-.trim {
+.trim-index {
   width: 200px;
   height: 280px;
+  object-fit: contain;
+  border:1px solid #ccc;
+}
+
+.trim-show {
+  width: 250px;
+  height: 400px;
   object-fit: contain;
   border:1px solid #ccc;
 }
