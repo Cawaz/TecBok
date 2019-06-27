@@ -28,6 +28,8 @@ ja:
         created_at: 登録日時
         updated_at: 更新日時
         remember_me: 次回から自動的にログイン
+      comment:
+        body: コメント
   views:
     pagination:
       first: 最初

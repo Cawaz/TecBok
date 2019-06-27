@@ -5,6 +5,9 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     if @comment.save
       render :index
+    else
+      flash.now[:alert] = @comment.errors.full_messages
+      render :index
     end
   end
 
