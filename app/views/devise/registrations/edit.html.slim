@@ -3,20 +3,21 @@ h2
 = image_tag current_user.avatar.variant(resize: "200x320") if current_user.avatar.attached?
 = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = render "devise/shared/error_messages", resource: resource
-  .form_group
+  .form-group
     = f.label :username
     = f.text_field :username, autofocus: true, class: 'form-control'
-  .form_group
+  .form-group
     = f.label :email
     = f.email_field :email, autocomplete: "email", class: 'form-control'
-  .form_group
+  .form-group
     = f.label :image
-    = f.file_field :avatar
+    .ml-4
+      = f.file_field :avatar
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     div
       | Currently waiting confirmation for: 
       = resource.unconfirmed_email
-  .form_group
+  .form-group
     = f.label :password
     = f.password_field :password, autocomplete: "new-password", class: 'form-control'
     small.text-muted
@@ -29,18 +30,19 @@ h2
       / em
       /   = @minimum_password_length
       /   |  文字以上
-  .form_group
+  .form-group
     = f.label :password_confirmation
     = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control'
-  .form_group
+  .form-group
     = f.label :current_password
     = f.password_field :current_password, autocomplete: "current-password", class: 'form-control'
     small.text-muted
       | 変更を反映するには現在のパスワードを入力してください
   .actions
     = f.submit "更新", class: 'btn btn-primary'
-h3
-  | アカウント削除
-p
-  | 一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
-  = button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class: 'btn btn-danger'
+hr.mt-4
+  h3
+    | アカウント削除
+  p
+    | 一度アカウントを削除すると、二度と元に戻せません。十分ご注意ください。
+    = button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当に削除しますか？" }, method: :delete, class: 'btn btn-danger'
