@@ -21,6 +21,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: "登録しました。"
     else
+      flash.now[:alert] = @post.errors.full_messages
       render :new
     end
   end
@@ -29,8 +30,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-    redirect_to @post, notice: "更新しました。"
+    if @post.update(post_params)
+      redirect_to @post, notice: "更新しました。"
+    else
+      flash.now[:alert] = @post.errors.full_messages
+      render :edit
+    end
   end
 
   def destroy

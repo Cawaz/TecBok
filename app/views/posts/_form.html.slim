@@ -1,6 +1,6 @@
-- if post.errors.present?
-  ul#error_explanation
-    - post.errors.full_messages.each do |message|
+- if flash.alert.present?
+  ul.list-unstyled.alert.alert-danger
+    - flash.alert.each do |message|
       li= message
 
 = form_with model: post, local: true do |f|
