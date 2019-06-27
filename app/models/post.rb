@@ -19,8 +19,8 @@ class Post < ApplicationRecord
   has_many :categories, through: :post_category_relations
   belongs_to :user
 
-  validates :title, presence: true
-  validates :review, presence: true
+  validates :title, presence: true, length: { maximum: 30 }
+  validates :review, presence: true, length: { maximum: 1000 }
   validates :rate, presence: true
 
   scope :recent, -> { order(created_at: :desc) }
