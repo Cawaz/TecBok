@@ -4,20 +4,20 @@
       li= message
 
 = form_with model: post, local: true do |f|
-  .form_group
+  .form-group
     = f.label :title
     = f.text_field :title, class: 'form-control'
 
-  .form_group
+  .form-group
     = f.label :review
     = f.text_area :review, rows: 10, class: 'form-control'
 
-  .form_group
+  .form-group
     = f.label :rate
     .ml-4
       = f.select :rate, options_for_select((0..10).to_a, :selected => post.rate)
 
-  .form_group
+  .form-group
     = f.label :image
     .ml-4
       = f.file_field :cover_image
