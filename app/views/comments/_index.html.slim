@@ -3,6 +3,10 @@
     - flash.alert.each do |message|
       li= message
 
+- if comments.blank?
+  small.text-muted
+    | まだコメントはありません
+
 - comments.each do |comment|
     - if comment.id.present?
       .row.mt-2
