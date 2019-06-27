@@ -1,0 +1,17 @@
+= search_form_for q, class: 'mb-5' do |f|
+  .form-group.row
+    .col-md-3
+      = f.search_field :title_cont, class: 'form-control', placeholder: '本のタイトルを入力'
+    = f.submit class: 'btn btn-outline-primary'
+.row
+  - posts.each do |post|
+    .col-md-3
+      p= link_to image_tag(post.image,  class: 'trim'), post
+      p= link_to post.title, post
+      = link_to post.user.username
+      .star-ratings-sprite
+        span.star-ratings-sprite-rating style="width:#{post.rate}0%"
+      span= icon('fas', 'thumbs-up')
+      span.ml-1= post.likes.count
+
+.mt-4= paginate posts
