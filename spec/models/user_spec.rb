@@ -21,7 +21,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "username, email, passworがあれば有効であること" do
+  it "username, email, passwordがあれば有効であること" do
     user = User.new(username: "Alice", email: "alice@example.com", password: "password")
     user.valid?
     expect(user).to be_valid
