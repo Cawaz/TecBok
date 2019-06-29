@@ -11,7 +11,7 @@ RSpec.describe PostsController, type: :controller do
     before { get :new }
 
     it 'レスポンスコードが200であること' do
-      expect(response).to have_http_status(:ok)
+      expect(response).to be_successful
     end
 
     it 'newテンプレートをレンダリングすること' do
