@@ -54,6 +54,8 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  rescue ActiveRecord::RecordNotFound => e
+    redirect_to root_path, alert: "投稿が存在しません。"
   end
 
   def move_to_index
