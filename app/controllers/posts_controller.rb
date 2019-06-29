@@ -5,13 +5,13 @@ class PostsController < ApplicationController
 
 
   def index
-    @q = Post.all.ransack(params[:q])
+    @q = Post.with_attached_cover_image.includes(:user).all.ransack(params[:q])
     @posts = @q.result(distinct: true).recent.page(params[:page]).per(8)
   end
 
   def show
     @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
     @categories = Category.all
   end
 
