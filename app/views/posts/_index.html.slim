@@ -1,16 +1,16 @@
 - if flash.alert.present?
   .alert.alert-danger= flash.alert
 
-- if posts.blank?
-  small.text-muted
-    | まだ投稿はありません
+= search_form_for q, class: 'mb-5' do |f|
+  .form-group.row
+    .col-md-3
+      = f.search_field :title_cont, class: 'form-control', placeholder: '本のタイトルを入力'
+    = f.submit class: 'btn btn-outline-primary'
 
+- if posts.blank?
+  .text-muted
+    | 投稿がありません
 - else
-  = search_form_for q, class: 'mb-5' do |f|
-    .form-group.row
-      .col-md-3
-        = f.search_field :title_cont, class: 'form-control', placeholder: '本のタイトルを入力'
-      = f.submit class: 'btn btn-outline-primary'
   .row
     - posts.each do |post|
       .col-md-3.mb-5
