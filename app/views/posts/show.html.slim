@@ -3,28 +3,31 @@
     = image_tag @post.image, class: 'd-block mx-auto trim-show'
 
   .col-md-8
-    h2 = @post.title
-
-    - @post.categories.each do |category|
-      span.badge.badge-pill.badge-warning.mr-2
-        = category.name
+    .d-inline-block
+      h2 = @post.title
+    span.text-muted.float-md-right
+      | by #{@post.user.username}
 
     div
+      - @post.categories.each do |category|
+        span.badge.badge-pill.badge-info.mr-2
+          = category.name
+
+    .mt-2
       .d-inline-block
         .star-ratings-sprite
           .star-ratings-sprite-rating style="width:#{@post.rate}0%"
 
       - if user_signed_in?
-        span.ml-5= render partial: 'like_action', locals: {post: @post, like: current_user.likes.find_by(post: @post)}
-      / - if current_user.id == @post.user.id
-      /   = link_to '編集', edit_post_path, class: 'btn btn-primary mr-2'
-      /   = link_to '削除', post_path, method: :delete, class: 'btn btn-danger', data: {confirm: '削除してよろしいですか？'}
+        span.ml-3= render partial: 'like_action', locals: {post: @post, like: current_user.likes.find_by(post: @post)}
 
-
-    = @post.user.username
-
-    .bg-light.p-3
+    .bg-light.mt-4.p-3
       = simple_format @post.review
+
+    - if current_user.id == @post.user.id
+      .float-md-right
+        = link_to icon('fas', 'edit', '編集'), edit_post_path, class: 'mr-3'
+        = link_to icon('fas', 'trash', '削除'), post_path, method: :delete, data: {confirm: '削除してよろしいですか？'}
 
     hr.mt-4
     h5 コメント
