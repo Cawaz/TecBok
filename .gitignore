@@ -28,3 +28,6 @@
 
 # User-specific stuff
 .idea/workspace.xml
+
+# aws access_key
+/config/credentials.yml.enc
