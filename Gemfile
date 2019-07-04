@@ -21,6 +21,7 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'ransack'
 gem 'mini_magick'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
