@@ -31,3 +31,4 @@
 
 # aws access_key
 /config/credentials.yml.enc
+/config/storage.yml
