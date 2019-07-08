@@ -11,8 +11,19 @@ h2
     .form-group
       = f.check_box :remember_me
       = f.label :remember_me
-  .bg-light.mb-3.p-3
-    | 【テスト用アカウント】    メールアドレス：test@example.com    パスワード：password
+  .card.bg-light.mb-3
+    .card-header
+      | ゲストアカウント
+    .card-body
+      p.card-title
+        | メールアドレス：gest@example.com
+      p.card-text
+        | パスワード：password
+    /   | ゲストアカウント
+    / p
+    /   | メールアドレス：test@example.com
+    / p
+    /   | パスワード：password
   .actions
     = f.submit "ログイン", class: 'btn btn-primary'
 .mt-4
