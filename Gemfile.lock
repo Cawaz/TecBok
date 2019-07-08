@@ -249,6 +249,8 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.2)
+    rspec_junit_formatter (0.4.1)
+      rspec-core (>= 2, < 4, != 2.12.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.3)
     sass (3.7.4)
@@ -352,6 +354,7 @@ DEPENDENCIES
   rails-controller-testing
   ransack
   rspec-rails (~> 3.7)
+  rspec_junit_formatter
   sass-rails (~> 5.0)
   selenium-webdriver
   slim-rails
