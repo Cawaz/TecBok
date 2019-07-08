@@ -1,0 +1,9 @@
+test:
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: <%= ENV.fetch('DATABASE_USERNAME','root') %>
+  password:
+  database: <%= ENV.fetch('DATABASE_NAME', 'app_test') %>
+  host: <%= ENV['DB_ROOT_HOST'] || '127.0.0.1' %>
+  socket: /var/run/mysqld/mysqld.sock
