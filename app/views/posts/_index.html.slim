@@ -14,15 +14,15 @@
   .row
     - posts.each do |post|
       .col-md-3.mb-5
-        p= link_to image_tag(post.image,  class: 'trim-index'), post
+        p= link_to image_tag(post.image,  class: 'post__cover-image-small'), post
         div
           = link_to post.title, post
         small.text-muted
           | by #{post.user.username}
         div
           .d-inline-block
-            .star-ratings-sprite
-              .star-ratings-sprite-rating style="width:#{post.rate}0%"
+            .post__star-ratings-sprite
+              .post__star-ratings-sprite-rating style="width:#{post.rate}0%"
           span.ml-5= icon('fas', 'thumbs-up')
           span.ml-1= post.likes.count
 

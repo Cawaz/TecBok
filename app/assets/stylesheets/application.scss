@@ -1,26 +1,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap";
-
-// 評価を星で表示
-.star-ratings-sprite {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
-  font-size: 0;
-  height: 21px;
-  line-height: 0;
-  overflow: hidden;
-  text-indent: -999em;
-  width: 110px;
-  display: block;
-}
-
-.star-ratings-sprite-rating {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
-  background-position: 0 100%;
-  float: left;
-  height: 21px;
-  display: block;
-}
+@import "posts";
 
 .img-avatar {
   border-radius: 50em;
@@ -29,16 +10,3 @@
   object-fit: contain;
 }
 
-.trim-index {
-  width: 200px;
-  height: 280px;
-  object-fit: contain;
-  border:1px solid #ccc;
-}
-
-.trim-show {
-  width: 250px;
-  height: 400px;
-  object-fit: contain;
-  border:1px solid #ccc;
-}
