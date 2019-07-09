@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "ログインとログアウト", type: :feature do
   background do
-    user = create(:user)
+    create(:user)
 
     visit root_path
     click_link 'ログイン'

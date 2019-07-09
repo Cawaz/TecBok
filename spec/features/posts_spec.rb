@@ -11,15 +11,27 @@ RSpec.feature "Posts", type: :feature do
     click_button 'ログイン'
   end
 
-  it '投稿一覧画面' do
+  scenario '投稿一覧画面' do
     expect(page).to have_content '投稿がありません'
   end
 
-  it '投稿する' do
+  scenario '投稿して更新する' do
     click_link '新規投稿'
     fill_in 'タイトル', with: 'テスト投稿'
     fill_in 'レビュー', with: 'レビューです。'
     click_button '投稿する'
     expect(page).to have_content '登録しました。'
+
+    click_link 'テスト投稿'
+    expect(current_path).to eq post_path(Post.last)
+
+    click_link '編集'
+    expect(current_path).to eq edit_post_path(Post.last)
+
+    fill_in 'タイトル', with: 'テスト投稿2'
+    click_button '更新する'
+
+    expect(page).to have_content '更新しました。'
+    expect(page).to have_content 'テスト投稿2'
   end
 end

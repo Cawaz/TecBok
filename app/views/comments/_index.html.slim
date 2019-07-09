@@ -8,14 +8,13 @@
     | まだコメントはありません
 
 - comments.each do |comment|
-    - if comment.id.present?
-      .row.mt-2
-        = image_tag(comment.user.image, class: 'img-avatar col-md-2')
-        .col-md-8
-          p.mb-0
-            = comment.user.username
-          p.mb-0
-            = simple_format comment.body
-        - if comment.user == current_user
-          small
-            = link_to icon('fas', 'trash', '削除'), post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: 'col-md-2'
+  .row.mt-2
+    = image_tag(comment.user.image, class: 'img-avatar col-md-2')
+    .col-md-8
+      p.mb-0
+        = comment.user.username
+      p.mb-0
+        = simple_format comment.body
+    - if comment.user == current_user
+      small
+        = link_to icon('fas', 'trash', '削除'), post_comment_path(comment.post_id, comment.id), method: :delete, remote: true, class: 'col-md-2'

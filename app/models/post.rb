@@ -21,7 +21,7 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 30 }
   validates :review, presence: true, length: { maximum: 1000 }
-  validates :rate, presence: true
+  validates :rate, presence: true, numericality: true
 
   scope :recent, -> { order(created_at: :desc) }
 
