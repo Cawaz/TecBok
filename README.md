@@ -9,7 +9,7 @@
 https://tecbok.herokuapp.com/
 
 ## Basic認証
-- ユーザ： user
+- ユーザー名： user
 - パスワード： password 
 
 # 技術スタック
