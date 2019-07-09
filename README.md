@@ -16,6 +16,8 @@ https://tecbok.herokuapp.com/
 - Ruby 2.5.3
 - Ruby on Rails 5.2.3
   - HTMLテンプレートエンジン：Slim
+- RSpec 3.7
+  - CircleCIによる自動化
 - MySQL 5.7.22
 - Docker Desktop 2.0.0.3
 
