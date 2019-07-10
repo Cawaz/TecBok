@@ -13,7 +13,7 @@
         span.badge.badge-pill.badge-info.mr-2
           = category.name
 
-    .mt-2
+    .mt-2.d-flex
       .d-inline-block
         .post__star-ratings-sprite
           .post__star-ratings-sprite-rating style="width:#{@post.rate}0%"
@@ -24,11 +24,10 @@
     .bg-light.mt-4.p-3.post__word-wrapper
       = simple_format @post.review
 
-    - if user_signed_in?
-      - if current_user.id == @post.user.id
-        .float-md-right
-          = link_to icon('fas', 'edit', '編集'), edit_post_path, class: 'mr-3'
-          = link_to icon('fas', 'trash', '削除'), post_path, method: :delete, data: {confirm: '削除してよろしいですか？'}
+    - if user_signed_in? && current_user.id == @post.user.id
+      .float-md-right
+        = link_to icon('fas', 'edit', '編集'), edit_post_path, class: 'mr-3'
+        = link_to icon('fas', 'trash', '削除'), post_path, method: :delete, data: {confirm: '削除してよろしいですか？'}
 
     hr.mt-4
     h5 コメント
