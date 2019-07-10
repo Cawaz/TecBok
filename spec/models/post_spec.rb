@@ -66,4 +66,10 @@ RSpec.describe Post, type: :model do
     expect(post.errors[:rate]).to include("を入力してください")
   end
 
+  it "rateが数値でなければ無効であること" do
+    post = Post.new(title: "人を動かす", review: "絶対に読むべき", rate: "文字", user_id: 1)
+    post.valid?
+    expect(post.errors[:rate]).to include("は数値で入力してください")
+  end
+
 end
