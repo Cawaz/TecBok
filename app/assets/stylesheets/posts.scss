@@ -16,6 +16,19 @@
   border:1px solid #ccc;
 }
 
+.post__amazon_link-btn,
+.post__amazon_link-btn.disabled, .post__amazon_link-btn:disabled {
+  color: #fff;
+  background-color: #ff9900;
+  border-color: #ff9900;
+}
+
+.post__amazon_link-btn:hover {
+  color: #fff;
+  background-color: #ef810F;
+  border-color: #ef810F;
+}
+
 // 評価を星で表示
 .post__star-ratings-sprite {
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;

@@ -13,6 +13,7 @@ ja:
       post:
         title: タイトル
         review: レビュー
+        link: Amazon URL
         rate: 評価
         image: 画像
         category: カテゴリ

@@ -1,6 +1,8 @@
 .row
   .col-md-4
-    = image_tag @post.image, class: 'd-block mx-auto post__cover-image-middle'
+    = image_tag @post.image, class: 'd-block post__cover-image-middle'
+    -if @post.link.present?
+      = link_to 'Amazonで見る', @post.link, class: 'btn post__amazon_link-btn btn-sm mt-3'
 
   .col-md-8
     .d-inline-block

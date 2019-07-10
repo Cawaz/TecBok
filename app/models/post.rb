@@ -3,6 +3,7 @@
 # Table name: posts
 #
 #  id         :bigint           not null, primary key
+#  link       :text(65535)
 #  rate       :integer          not null
 #  review     :text(65535)      not null
 #  title      :string(255)      not null
