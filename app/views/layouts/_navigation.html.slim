@@ -2,7 +2,7 @@ nav.navbar.navbar-expand-sm.mt-3.mb-3
   = link_to 'TecBok', root_path, class: "navbar-brand ml-4"
   .collapse.navbar-collapse.justify-content-end
     - if user_signed_in?
-      = link_to '新規投稿', new_post_path, class: 'btn btn-primary mr-4'
+      = link_to '新規投稿', new_post_path, class: 'mr-4'
       ul.navbar-nav
         li.dropdown
           a.dropdown-toggle[data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
