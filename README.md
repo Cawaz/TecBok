@@ -2,9 +2,9 @@
 技術書のレビューを投稿できるアプリです。
 
 ## 投稿一覧画面
-![post_index](https://user-images.githubusercontent.com/47560224/60763696-f070ea00-a0b4-11e9-96ef-404ce1a97339.jpg)
+![ScreenShot 2019-07-11 22 43 37](https://user-images.githubusercontent.com/47560224/61055937-7b434300-a42d-11e9-8ea5-c72f17b69938.jpg)
 ## 投稿詳細画面
-![post_show](https://user-images.githubusercontent.com/47560224/60763695-efd85380-a0b4-11e9-84a1-4c1578ccf5e9.jpg)
+![ScreenShot 2019-07-11 22 43 59](https://user-images.githubusercontent.com/47560224/61055942-7d0d0680-a42d-11e9-9284-9324c833208f.jpg)
 # URL
 https://tecbok.herokuapp.com/
 
@@ -35,3 +35,12 @@ https://tecbok.herokuapp.com/
 - 投稿にいいね・削除(Ajax)
 - ユーザの登録・編集・削除(devise)
 - マイページ
+
+# 設計書
+### 要件定義書（タスクばらし）
+
+
+### ER図
+![ScreenShot 2019-07-11 22 50 51](https://user-images.githubusercontent.com/47560224/61056465-5d2a1280-a42e-11e9-938c-d0561a7c9be6.jpg)
+### 画面遷移図
+![ScreenShot 2019-07-07 13 07 20](https://user-images.githubusercontent.com/47560224/61056474-60250300-a42e-11e9-9a7f-17af715c4eb7.jpg)
