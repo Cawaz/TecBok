@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :review, :rate, :cover_image, category_ids: [])
+    params.require(:post).permit(:title, :review, :link, :rate, :cover_image, category_ids: [])
   end
 
   def set_post
@@ -59,8 +59,6 @@ class PostsController < ApplicationController
   end
 
   def move_to_index
-    if user_signed_in?
-      redirect_to root_path unless current_user.id == @post.user_id
-    end
+    redirect_to root_path if user_signed_in? && current_user.id != @post.user_id
   end
 end
