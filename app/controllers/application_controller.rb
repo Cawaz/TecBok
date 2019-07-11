@@ -9,10 +9,8 @@ class ApplicationController < ActionController::Base
   end
 
   # 例外ハンドル
-  if Rails.env.development?
-    rescue_from ActiveRecord::RecordNotFound,     with: :_render_404
-    rescue_from ActionController::RoutingError,   with: :_render_404
-  end
+  rescue_from ActiveRecord::RecordNotFound,     with: :_render_404
+  rescue_from ActionController::RoutingError,   with: :_render_404
 
   def routing_error
     raise ActionController::RoutingError, params[:path]
