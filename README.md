@@ -38,8 +38,7 @@ https://tecbok.herokuapp.com/
 
 # 設計書
 ### 要件定義書（タスクばらし）
-
-
+https://quip.com/sOzwAvsCEzVK
 ### ER図
 ![ScreenShot 2019-07-11 22 50 51](https://user-images.githubusercontent.com/47560224/61056465-5d2a1280-a42e-11e9-938c-d0561a7c9be6.jpg)
 ### 画面遷移図
