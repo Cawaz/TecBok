@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
+  before_action :set_post, only: %i[create destroy]
+  before_action :set_comment, only: %i[destroy]
+
   def create
-    @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
-    @comment.user_id = current_user.id
+    @comment.user = current_user
     if @comment.save
       render :index
     else
@@ -13,12 +15,20 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    if @comment.destroy
-      render :index
-    end
+    @comment.destroy
+    render :index
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
+
+  def set_comment
+    @comment = @post.comments.find(params[:id])
+  end
+
   def comment_params
     params.require(:comment).permit(:body, :user_id, :post_id,)
   end
