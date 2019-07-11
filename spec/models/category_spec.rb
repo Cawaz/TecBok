@@ -11,16 +11,15 @@
 require 'rails_helper'
 
 RSpec.describe Category, type: :model do
-  it "nameがあれば有効であること" do
-    category = Category.new(name: "Ruby")
-    category.valid?
-    expect(category).to be_valid
+  let(:category) { build(:category, name: "Ruby")}
+  subject { category.valid? }
+
+  context 'nameがあれば有効であること' do
+    it { is_expected.to be true }
   end
 
-  it "重複したnameなら無効であること" do
-    Category.create(name: "Ruby on Rails")
-    category = Category.new(name: "Ruby on Rails")
-    category.valid?
-    expect(category.errors[:name]).to include("はすでに存在します")
+  context '重複したnameなら無効であること' do
+    let!(:category2) { create(:category, name: "Ruby")}
+    it { is_expected.to be false }
   end
 end
